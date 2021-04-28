@@ -1,0 +1,276 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+            google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+
+        var data = new google.visualization.DataTable();
+        data.addColumn('date', 'Time of Day');
+        data.addColumn('number', 'Number of Hospital Openings');
+
+        data.addRows([
+          [new Date(1839, 0, 1), 2],  [new Date(1875, 0, 2), 4],  [new Date(1887, 0, 3), 6],
+          [new Date(1892, 0, 4), 7],  [new Date(1901, 0, 5), 9],  [new Date(1976, 0, 6), 11],
+          [new Date(1979, 0, 7), 13],  [new Date(1990, 0, 8), 19],  [new Date(1997, 0, 9), 20],
+          [new Date(1998, 0, 10), 23], [new Date(1999, 0, 11), 24]
+        ]);
+
+
+        var options = {
+          title: 'Hospital Openings in Harlem and the Bronx since 1839',
+          width: 900,
+          height: 500,
+          hAxis: {
+            format: 'yyyy',
+            gridlines: {count: 15}
+          },
+          vAxis: {
+            gridlines: {color: 'none'},
+            minValue: 0
+          },
+		trendlines: { 0: {} }    // Draw a trendline for data series 0.
+        };
+
+        var chart = new google.visualization.ScatterChart(document.getElementById('chart_div'));
+
+        chart.draw(data, options);
+
+        var button = document.getElementById('change');
+
+        button.onclick = function () {
+
+          // If the format option matches, change it to the new option,
+          // if not, reset it to the original format.
+          options.hAxis.format === 'M/d/yy' ?
+          options.hAxis.format = 'MMM dd, yyyy' :
+          options.hAxis.format = 'M/d/yy';
+
+          chart.draw(data, options);
+        };
+      }
+    </script>
+  <title>Young Lords' Bronx</title>
+  
+<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+<script src="https://api.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.js"></script>
+<link href="https://api.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.css" rel="stylesheet" />
+
+    <!-- Bootstrap Core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Theme CSS -->
+    <link href="css/freelancer.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+<!-- Initiates Modal and Uses cookies for Dont Show Again Checkbox -->     
+
+</head>
+	<body id="page-top" class="index">
+<style>
+		#menu {
+			background: #fff;
+			position: absolute;
+			z-index: 1;
+			top: 10px;
+			right: 10px;
+			border-radius: 3px;
+			width: 120px;
+			border: 1px solid rgba(0, 0, 0, 0.4);
+			font-family: 'Open Sans', sans-serif;
+			}
+ 
+		#menu a {
+			font-size: 13px;
+			color: #404040;
+			display: block;
+			margin: 0;
+			padding: 0;
+			padding: 10px;
+			text-decoration: none;
+			border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+			text-align: center;
+			}
+ 
+		#menu a:last-child {
+			border: none;
+			}
+ 
+		#menu a:hover {
+			background-color: #f8f8f8;
+			color: #404040;
+			}
+ 
+		#menu a.active {
+			background-color: #3887be;
+			color: #ffffff;
+			}
+ 
+		#menu a.active:hover {
+			background: #3074a4;
+			}
+	
+          body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Helvetica Neue', Helvetica, Arial, Sans-serif;
+          }
+
+	caption {
+  display: table-caption;
+  text-align: center;
+}
+         
+          </style>
+    <!-- Navigation -->
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="#page-top">YOUNG LORDS OF NEW YORK</a>
+                <!--<a class="navbar-brand" href="about.html">About</a>-->
+           </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                   <li class="page-scroll">
+                        <a href="index.html">Direct Action</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="key.html">Implications</a>
+                    </li>
+                <li class="page-scroll">
+                        <a href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+
+        <!-- /.container-fluid -->
+    </nav>
+
+  
+
+	    <section class="page-section portfolio" id="portfolio">
+            <div class="container">
+<br>
+		    <div class="container">
+<iframe frameborder="0" class="juxtapose" width="100%" height="543" src="https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=a966cea2-88a5-11ea-a879-0edaf8f81e27"></iframe>	 
+			    <caption style="text-align:right" style="font-family:Helvetica Neue">Slide over image to show hospital openings before and after 1970. Data from <a href="https://data.cityofnewyork.us/Health/NYC-Health-Hospitals-Facilities-2011/ymhw-9cz9">NYC Open Data</a></caption>
+		    </div>
+		
+           
+		    <div class="container">
+		    <br>
+		    <p><h2>Over Time</h2></p>
+		    <p class="lead">Using data from the New York City Health department and the data retrieval tools from open ny,
+the effects of the Young Lords direct action are clear. After gaining concessions from public health officials for testing, the exponential increase in clinical facilities focused primarily in Harlem and the Bronx brought millions of people closer to accessing Health Care facilities.</p>
+		    </div>
+		    <div id="chart_div" style="width: 900px; height: 500px;"></div>
+				<caption style="text-align:right" style="font-family:Helvetica Neue">Data from <a href="https://data.cityofnewyork.us/Health/NYC-Health-Hospitals-Facilities-2011/ymhw-9cz9">NYC Open Data</a></caption>
+
+		    		    <br>
+		    <p><h2>Implications</h2></p>
+		    <p class="lead">The early 20th century experienced the first boom of hospital construction, with the major metropolitan serving Lincoln, Metropolitan, Harlem, and Sydenham hospitals opening before the start of the 20th century and Jacobi Medical Center opening in 1901. 
+</p>
+		    <p class="lead">
+There is no official explanation for the 75 year gap between the construction of the Jacobi Medical Complex and the North Central Bronx Hospital despite a population growth of over 1 million people (Data from <a href="https://data.cityofnewyork.us/City-Government/New-York-City-Population-by-Borough-1950-2040/xywu-7bv9/data#Manage">NYC Open Data</a>). There is also no official explanation about the surge of health facility construction beginning in the 1990s. The boroughs with the highest population growths also saw the highest number of health facilities open.</p>
+		    <p class="lead">
+		    The visibility The Young Lords brought to health inequities most directly resulted in expanding tuberculosis and lead testing and the renovation of the Lincoln Medical Complex. However, it is certain that their mass community-oriented approach to change helped refocus municipal resources toward providing a stronger case for health access that had been seen before in Harlem and the Bronx.</p>
+	    </div>
+		<br>
+
+</script>
+		    </div>
+		    </section>
+<!--var content = '<h2>' + feature.properties.title + '</h2><img src="' + feature.properties.image + '" alt="">';-->
+   
+           
+ 
+
+    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+    <div class="scroll-top page-scroll hidden-sm hidden-xs hidden-lg hidden-md">
+        <a class="btn btn-primary" href="#page-top">
+            <i class="fa fa-chevron-up"></i>
+        </a>
+    </div>
+
+  
+
+    <!-- jQuery -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/contact_me.js"></script>
+
+    <!-- Theme JavaScript -->
+    <script src="js/freelancer.min.js"></script>
+	 
+
+
+<!--var content = '<h2>' + feature.properties.title + '</h2><img src="' + feature.properties.image + '" alt="">';-->
+   
+           
+ 
+
+    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+    <div class="scroll-top page-scroll hidden-sm hidden-xs hidden-lg hidden-md">
+        <a class="btn btn-primary" href="#page-top">
+            <i class="fa fa-chevron-up"></i>
+        </a>
+    </div>
+
+  
+
+    <!-- jQuery -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/contact_me.js"></script>
+
+    <!-- Theme JavaScript -->
+    <script src="js/freelancer.min.js"></script>
+
+</body>
+
+</html>

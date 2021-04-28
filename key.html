@@ -10,58 +10,8 @@
 	  <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js'></script>
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.css' rel='stylesheet' />
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-            google.charts.load('current', {'packages':['corechart']});
-      google.charts.setOnLoadCallback(drawChart);
-
-      function drawChart() {
-
-        var data = new google.visualization.DataTable();
-        data.addColumn('date', 'Time of Day');
-        data.addColumn('number', 'Number of Hospital Openings');
-
-        data.addRows([
-          [new Date(1839, 0, 1), 2],  [new Date(1875, 0, 2), 4],  [new Date(1887, 0, 3), 6],
-          [new Date(1892, 0, 4), 7],  [new Date(1901, 0, 5), 9],  [new Date(1976, 0, 6), 11],
-          [new Date(1979, 0, 7), 13],  [new Date(1990, 0, 8), 19],  [new Date(1997, 0, 9), 20],
-          [new Date(1998, 0, 10), 23], [new Date(1999, 0, 11), 24]
-        ]);
-
-
-        var options = {
-          title: 'Hospital Openings in Harlem and the Bronx since 1839',
-          width: 900,
-          height: 500,
-          hAxis: {
-            format: 'yyyy',
-            gridlines: {count: 15}
-          },
-          vAxis: {
-            gridlines: {color: 'none'},
-            minValue: 0
-          },
-		trendlines: { 0: {} }    // Draw a trendline for data series 0.
-        };
-
-        var chart = new google.visualization.ScatterChart(document.getElementById('chart_div'));
-
-        chart.draw(data, options);
-
-        var button = document.getElementById('change');
-
-        button.onclick = function () {
-
-          // If the format option matches, change it to the new option,
-          // if not, reset it to the original format.
-          options.hAxis.format === 'M/d/yy' ?
-          options.hAxis.format = 'MMM dd, yyyy' :
-          options.hAxis.format = 'M/d/yy';
-
-          chart.draw(data, options);
-        };
-      }
-    </script>
-  <title>Young Lords' Bronx!</title>
+  
+  <title>Healthy Visuals</title>
   
 <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
 <script src="https://api.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.js"></script>
@@ -156,7 +106,7 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="#page-top">YOUNG LORDS OF NEW YORK</a>
+                <a class="navbar-brand" href="#page-top">Mapping Closures of Rural Hospitals</a>
                 <!--<a class="navbar-brand" href="about.html">About</a>-->
            </div>
 

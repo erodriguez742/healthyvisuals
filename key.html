@@ -7,6 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
+	  <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.css' rel='stylesheet' />
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
             google.charts.load('current', {'packages':['corechart']});
@@ -139,6 +141,12 @@
   display: table-caption;
   text-align: center;
 }
+	      #map {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+      }
          
           </style>
     <!-- Navigation -->
@@ -180,11 +188,36 @@
 	    <section class="page-section portfolio" id="portfolio">
             <div class="container">
 <br>
-		    <div class="container">
-<iframe frameborder="0" class="juxtapose" width="100%" height="543" src="https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=a966cea2-88a5-11ea-a879-0edaf8f81e27"></iframe>	 
-			    <caption style="text-align:right" style="font-family:Helvetica Neue">Slide over image to show hospital openings before and after 1970. Data from <a href="https://data.cityofnewyork.us/Health/NYC-Health-Hospitals-Facilities-2011/ymhw-9cz9">NYC Open Data</a></caption>
-		    </div>
-		
+		    <div id='map'></div>
+<script>
+mapboxgl.accessToken = 'pk.eyJ1Ijoicm9kcmk2OTEiLCJhIjoiY2szMGsyYTczMHRqbjNtczF0bDg2Zm83YSJ9.91pXtlBbZG8dWo9-hnz04w';
+var map = new mapboxgl.Map({
+container: 'map',
+zoom: 3.68,
+center: [-98.136068, 38.316792],
+style: 'mapbox://styles/rodri691/cknyoija82o7817s0s1yj42a4'
+});
+
+map.on('click', function(e) {
+  var features = map.queryRenderedFeatures(e.point, {
+    layers: ['hospitalclosures'] // replace this with the name of the layer
+  });
+
+  if (!features.length) {
+    return;
+  }
+
+  var feature = features[0];
+
+  var popup = new mapboxgl.Popup({ offset: [0, -15] })
+    .setLngLat(feature.geometry.coordinates)
+    .setHTML('<h3>' + feature.properties.Hospital
+ + '</h3><p>' + feature.properties.ClosureYear + '</p>')
+    .addTo(map);
+});
+
+
+</script>
            
 		    <div class="container">
 		    <br>

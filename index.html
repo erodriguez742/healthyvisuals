@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Healthy Visuals</title>
+    <title>healthy Visuals</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -32,6 +32,7 @@
   <script type="text/javascript">
     google.charts.load('current', {'packages':['corechart']});
     google.charts.setOnLoadCallback(drawChart1);
+	  google.charts.setOnLoadCallback(drawChart2);
 
 	  
     function drawChart1() {
@@ -59,7 +60,30 @@
       chart.draw(data, options);
     }
 
-    
+    function drawChart2() {
+         var data = google.visualization.arrayToDataTable([
+['year', 'Single', 'Single parent with children',	'Married couple or partners', 'Two parent family with children', 'Other'],
+['2010', 76.4,	87.3,	85.9,	88,	75.2],
+['2011', 77.6,	87.7,	85.5,	88.3,	77.4],
+['2012', 78.7,	88,	85.7,	88.3,	77.9],
+['2013', 79,	88,	86.6,	88.7,	77.8],
+['2014', 83.1,	90.4,	88.9,	90.3,	83.2],
+['2015', 86.6,	92.3,	91.3,	92.2,	86.4],
+['2016', 87.9,	91.4,	92,	92.2,	86.7],
+['2017', 87,	91.6,	91.5,	91.9,	86.6],
+['2018', 85.1,	91.2,	91.2,	91.9,	86.6]
+]);
+
+      var options = {
+        title: 'Access to Health Services through Insurance, by Family type',
+        curveType: 'function',
+        legend: { position: 'bottom' }
+      };
+
+      var chart = new google.visualization.LineChart(document.getElementById('chart_2'));
+
+      chart.draw(data, options);
+    }
 
   </script>
     <style>
@@ -190,73 +214,19 @@ figcaption {
 <figcaption style="font-family:Helvetica Neue" text-align: center>Access to Health Services through Insurance, by Family income (percent poverty threshold)</figcaption>
 
 </figure>
-		    <br>
 <br>
-<br>
-		    <p><h2>The Platform: All Power to All the People</h2></p>
-<p class="lead">&nbsp; &nbsp; &nbsp;One such tool was the publication of their own newspaper, distributed in communities like the Bronx, Palante. A familiar term amongst Latinx and Afro-Latinx of the Caribbean and its diaspora, it is a shortened mash-up of para adelante, meaning &ldquo;forward.&rdquo; This rallying call, front and center on the masthead, informed community citizens of the issues important to the Young Lords, manifestos, and calls to direct action. The second issue, published in May of 1970, publicized what would become known as the &ldquo;13 Point Program and Platform of the Young Lords Organization.&rdquo; The 13 points are as follows:</p>
-		    <p class="small">
-<ol>
-    <li>WE WANT SELF-DETERMINATION FOR PUERTO RICANS&mdash;LIBERATION ON THE ISLAND AND INSIDE THE UNITED STATES.</li>
-    <li>WE WANT SELF-DETERMINATION FOR ALL LATINOS.</li>
-    <li>WE WANT LIBERATION OF ALL THIRD WORLD PEOPLE.</li>
-    <li>WE ARE REVOLUTIONARY NATIONALISTS AND OPPOSE RACISM.</li>
-    <li>WE WANT COMMUNITY CONTROL OF OUR INSTITUTIONS AND LAND.</li>
-    <li>WE WANT A TRUE EDUCATION OF OUR CREOLE CULTURE AND SPANISH LANGUAGE.</li>
-    <li>WE OPPOSE CAPITALISTS AND ALLIANCES WITH TRAITORS.</li>
-    <li>WE OPPOSE THE AMERIKKKAN MILITARY</li>
-    <li>WE WANT FREEDOM FOR ALL POLITICAL PRISONERS.</li>
-    <li>. WE WANT EQUALITY FOR WOMEN. MACHISMO MUST BE REVOLUTIONARY . . . NOT OPPRESSIVE</li>
-    <li>WE FIGHT ANTI-COMMUNISM WITH INTERNATIONAL UNITY</li>
-    <li>WE BELIEVE ARMED SELF-DEFENSE AND ARMED STRUGGLE ARE THE ONLY MEANS TO LIBERATION.</li>
-    <li>WE WANT A SOCIALIST SOCIETY.</li>
-</ol>
-		    </p>
-<p class="lead">&nbsp; &nbsp; &nbsp;While most points align with platforms from other ethnocentric-leftist groups (Black Panthers, Brown Berets), point five, &ldquo;We want community control of our institutions and land,&rdquo; most explicitly outline demands for material autonomy. One such institution, that of the clinic and of public health, is the focus of this dissertation. By seizing these institutions from the state, albeit, for a short time, the Young Lords showed power through communal autonomy. Furthermore, they exemplify the ability of a community&rsquo;s self-sufficiency. The demand for care and in some cases, the administration of care,</p>
-<br>
-	<img style="display:block;margin:auto;" src="img/palanteresized.jpg" alt="Palante" align="middle">
+	 <p><h2>Visualizing Health</h2></p>
 
-<br>
-<caption style="text-align:right" style="font-family:Helvetica Neue">Young Lords, “13 Point Platform,” 1969, courtesy Sean Stewart/Babylon Falling Collection and Interference Archive</caption>
+ <div class="container">
+
+<p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed leo lacinia, rutrum enim a, auctor tortor. Suspendisse auctor nibh mauris, ut mattis ligula lacinia non. Nulla nisi lectus, feugiat a lectus ut, ultrices commodo justo. Ut enim eros, consequat in condimentum non, dapibus sed mauris. Morbi orci metus, blandit lobortis lacus commodo, porta vulputate mauris. In ultricies orci sapien, id pharetra lacus pellentesque sollicitudin. Nulla et massa elit. Sed semper nunc vitae magna bibendum viverra. Integer fringilla facilisis elit, in tempus orci vestibulum sed. Nullam in tempor sapien, ut tristique sem. Aenean id tincidunt odio. Cras consequat id nisl non facilisis. Phasellus ligula dolor, mollis ac tempor ut, pharetra in urna.</p>
+<figure>
+		      <div id="chart_2" style="width: 900px; height: 500px"></div>
+<figcaption style="font-family:Helvetica Neue" text-align: center>Access to Health Services through Insurance, by Family income (percent poverty threshold)</figcaption>
+
+</figure>
+
 		    
-<br>
-<br>
-<br>
-		    <p><h2>10 Points for Community Health</h2></p>
-		   <p class="lead">&nbsp; &nbsp; &nbsp;The group recognized the need for better care. After an associate of the organization, Mingo El Loco, died as a result of treatable wounds from a stabbing because an ambulance took over an hour to arrive, the group decided to take the demand for what they termed &ldquo;decent&rdquo; healthcare a main goal for their organization. They talked to sympathetic health care workers in their community and learned that much of what afflicted people in their community&mdash; lead poisoning, long waits at the emergency room, over prescription, and a lack of ancillary care&mdash; could be provided with mass health programs like those in wealthier suburbs. In addition to their 13-point platform, YL released a 10-point health program in January of 1970. These 10 points include:</p>
-<ol>
-    <li>We want total self-determination of all health service at East Harlem (El Barrio) through an incorporated community-staff governing board for Metropolitan Hospital. (Staff is anyone and everyone working in Metropolitan, except administrators.)</li>
-    <li>We want immediate replacement of all Lindsay and Terenzio administrators by com- munity and staff-appointed people whose practice has demonstrated their commitment to serve our poor community.</li>
-    <li>We demand an immediate end to construction of the new emergency room until the Metropolitan Hospital Community&ndash;Staff Governing Board inspects and approves them or authorizes new plans.</li>
-    <li>We want employment for our people. All jobs filled in El Barrio must be filled by residents first, using on-the-job training and other educational opportunities as bases for service and promotions.</li>
-    <li>We want free publicly supported health care for treatment and prevention.</li>
-    <li>We want an end to all fees.</li>
-    <li>We want total decentralization of health&mdash;block health officers responsible to the Community-Staff Board should be instituted.</li>
-    <li>We want &ldquo;door-to-door&rdquo; preventative health services emphasizing environment and sanitation control, nutrition, drug addiction, maternal and childcare and senior citizen services.</li>
-    <li>We want education programs for all the people to expose health problems&mdash;sanitation, rats, poor housing, malnutrition, police brutality, pollution, and other forms of oppression.</li>
-    <li>We want total control by the Metropolitan Hospital Community-Staff Governing Board of budget allocations, medical policy, along the above points, hiring and firing and salaries of employees, construction and health code enforcement.</li>
-
-</ol>
-	<img style="display:block;margin:auto;" src="img/cartoonresize.jpg" alt="Cartoon" align="middle">
-<br>
-<caption style="text-align:right" style="font-family:Helvetica Neue">An illustration from the Young Lords' newspaper, Pa'lante, made by Denise Oliver, a member of the Young Lords' steering committee</caption>
-
-		<br>
-		<br>
-		    <br>
-		    <p><h2>After Effects</h2></p>
-<p class="lead">&nbsp; &nbsp; &nbsp;Their revolutionary approach to preventative care embodied a greater care for community as it was constituted. While they retained distinctly anti-Western ideals through their resistance to capitalism, they utilized the materials and technologies available to them. They embodied indigenous practice through their communal care models and their insistence on re-working the existing institutions to make them work for the community. Their frequent sign off in <em>Palante</em>, &ldquo;All power to the people&rdquo; does not specify for whom the power is intended. Rather, their analysis of an increasingly capitalist healthcare system knowingly signals that capitalism and community health are incongruous.</p>
-<p class="lead">&nbsp; &nbsp; &nbsp;This project seeks to demonstrate the material effect of their direct action by showing how their initiatives and offensive outmaneuvering of municipal officials lead to more present and available healthcare services. While access to care is far from being the only indicator ensuring community health, it is a start.&nbsp;</p>
-
-
-<img style="display:block;margin:auto;" src="img/Young-Lords-02.png" alt="chillin" align="middle">
-<br>
-<caption style="text-align:right" style="font-family:Helvetica Neue">Photo by Michael Abramson</caption>
-<br>
-	<br>
-	<br>
-		    <p><h2>Direct Action over Time</h2></p>
-    <iframe src='https://cdn.knightlab.com/libs/timeline3/latest/embed/index.html?source=1B0rwd32IiGH-qLa1AbJjsQnJV5Ytefal5WEbpFMfVwM&font=Default&lang=en&initial_zoom=2&height=650' width='100%' height='650' webkitallowfullscreen mozallowfullscreen allowfullscreen frameborder='0'></iframe>
 </div>               
 </div>
     </section>

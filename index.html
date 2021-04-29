@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Healthy Visuals</title>
+    <title>healthy Visuals</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -39,6 +39,7 @@
 	  google.charts.setOnLoadCallback(drawChart6);
 	  google.charts.setOnLoadCallback(drawChart7);
 	  google.charts.setOnLoadCallback(drawChart8);
+	  google.charts.setOnLoadCallback(drawChart9);
 
 	  
     function drawChart1() {
@@ -234,6 +235,30 @@ function drawChart3() {
       };
 
       var chart = new google.visualization.LineChart(document.getElementById('chart_8'));
+
+      chart.draw(data, options);
+    }
+	  function drawChart9() {
+     var data = google.visualization.arrayToDataTable([
+['date', 'Metropolitan', 'Non-metropolitan'],
+['2010', 82.2,	79.6],
+['2011', 83.3,	80.2],
+['2012', 83.6,	80.1],
+['2013', 83.8, 80.7],
+['2014', 87, 84.8],
+['2015', 89.7,	87.2],
+['2016', 90.1,	86.7],
+['2017', 89.8,	86.2],
+['2018', 89.4,	86]
+]);
+
+      var options = {
+        title: 'Access to Health Services through Insurance, by Geographic location',
+        curveType: 'function',
+        legend: { position: 'bottom' }
+      };
+
+      var chart = new google.visualization.LineChart(document.getElementById('chart_9'));
 
       chart.draw(data, options);
     }
@@ -440,6 +465,17 @@ figcaption {
 <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed leo lacinia, rutrum enim a, auctor tortor. Suspendisse auctor nibh mauris, ut mattis ligula lacinia non. Nulla nisi lectus, feugiat a lectus ut, ultrices commodo justo. Ut enim eros, consequat in condimentum non, dapibus sed mauris. Morbi orci metus, blandit lobortis lacus commodo, porta vulputate mauris. In ultricies orci sapien, id pharetra lacus pellentesque sollicitudin. Nulla et massa elit. Sed semper nunc vitae magna bibendum viverra. Integer fringilla facilisis elit, in tempus orci vestibulum sed. Nullam in tempor sapien, ut tristique sem. Aenean id tincidunt odio. Cras consequat id nisl non facilisis. Phasellus ligula dolor, mollis ac tempor ut, pharetra in urna.</p>
 <figure>
 		      <div id="chart_8" style="width: 900px; height: 500px"></div>
+<figcaption style="font-family:Helvetica Neue" text-align: center>Access to Health Services through Insurance, by Family income (percent poverty threshold)</figcaption>
+
+</figure>
+	 	 		 	 	 <br>
+	 <p><h2>Visualizing Health</h2></p>
+
+ <div class="container">
+
+<p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed leo lacinia, rutrum enim a, auctor tortor. Suspendisse auctor nibh mauris, ut mattis ligula lacinia non. Nulla nisi lectus, feugiat a lectus ut, ultrices commodo justo. Ut enim eros, consequat in condimentum non, dapibus sed mauris. Morbi orci metus, blandit lobortis lacus commodo, porta vulputate mauris. In ultricies orci sapien, id pharetra lacus pellentesque sollicitudin. Nulla et massa elit. Sed semper nunc vitae magna bibendum viverra. Integer fringilla facilisis elit, in tempus orci vestibulum sed. Nullam in tempor sapien, ut tristique sem. Aenean id tincidunt odio. Cras consequat id nisl non facilisis. Phasellus ligula dolor, mollis ac tempor ut, pharetra in urna.</p>
+<figure>
+		      <div id="chart_9" style="width: 900px; height: 500px"></div>
 <figcaption style="font-family:Helvetica Neue" text-align: center>Access to Health Services through Insurance, by Family income (percent poverty threshold)</figcaption>
 
 </figure>

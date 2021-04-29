@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>healthy Visuals</title>
+    <title>Healthy Visuals</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -37,6 +37,7 @@
 	  google.charts.setOnLoadCallback(drawChart4);	
 	  google.charts.setOnLoadCallback(drawChart5);
 	  google.charts.setOnLoadCallback(drawChart6);
+	  google.charts.setOnLoadCallback(drawChart7);
 
 	  
     function drawChart1() {
@@ -188,6 +189,29 @@ function drawChart3() {
 
       chart.draw(data, options);
     }
+	  
+	  function drawChart7() {
+     var data = google.visualization.arrayToDataTable([
+['Year', 'Straight', 'Gay/Lesbian', 'Straight, Male', 'Straight, Female', 'Gay, Male', 'Bisexual', 'Gay/Lesbian, Female', 'Bisexual, Male', 'Bisexual, Female'],
+['2013',	80.4,	82.2,	78.3,	82.2,	82.2,	78.1,	82.2,	81.8,	76.4],
+['2014',	84.1,	81.8,	82.2,	85.8,	82.4,	83.9,	81.1,	77.6,	86.3],
+['2015',	87.6,	88.9,	85.8,	89.3,	88,	86.2,	90.1,	83.4,	87.3],
+['2016',	88.6,	92.3,	86.7,	90.3,	92.5,	89.2,	92,	90.5,	88.7],
+['2017',	87.9,	87.9,	86.5,	89.2,	91.3,	84.7,	83.5,	89.6,	82.9],
+['2018',	87.2,	88.7,	85.3,	88.9,	88.1,	85.9,	89.6,	80.9,	88.1]
+]);
+
+      var options = {
+        title: 'Access to Health Services through Insurance, by Sexual orientation',
+        curveType: 'function',
+        legend: { position: 'bottom' }
+      };
+
+      var chart = new google.visualization.LineChart(document.getElementById('chart_7'));
+
+      chart.draw(data, options);
+    }
+
   </script>
     <style>
 		#menu {
@@ -372,7 +396,17 @@ figcaption {
 <figcaption style="font-family:Helvetica Neue" text-align: center>Access to Health Services through Insurance, by Family income (percent poverty threshold)</figcaption>
 
 </figure>
-		    
+		 	 	 <br>
+	 <p><h2>Visualizing Health</h2></p>
+
+ <div class="container">
+
+<p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed leo lacinia, rutrum enim a, auctor tortor. Suspendisse auctor nibh mauris, ut mattis ligula lacinia non. Nulla nisi lectus, feugiat a lectus ut, ultrices commodo justo. Ut enim eros, consequat in condimentum non, dapibus sed mauris. Morbi orci metus, blandit lobortis lacus commodo, porta vulputate mauris. In ultricies orci sapien, id pharetra lacus pellentesque sollicitudin. Nulla et massa elit. Sed semper nunc vitae magna bibendum viverra. Integer fringilla facilisis elit, in tempus orci vestibulum sed. Nullam in tempor sapien, ut tristique sem. Aenean id tincidunt odio. Cras consequat id nisl non facilisis. Phasellus ligula dolor, mollis ac tempor ut, pharetra in urna.</p>
+<figure>
+		      <div id="chart_7" style="width: 900px; height: 500px"></div>
+<figcaption style="font-family:Helvetica Neue" text-align: center>Access to Health Services through Insurance, by Family income (percent poverty threshold)</figcaption>
+
+</figure>	    
 </div>               
 </div>
     </section>

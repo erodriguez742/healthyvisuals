@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Healthy Visuals</title>
+    <title>healthy Visuals</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -262,8 +262,8 @@ function drawChart3() {
 
       chart.draw(data, options);
     }
-	          function drawCharta() {
-          var data = google.visualization.arrayToDataTable([
+	   function drawCharta() {
+     var data = google.visualization.arrayToDataTable([
             ['Year', 'Male', 'Female'],
             ['2010',  79.7,	83.9],
             ['2011',  81.2,	84.4],
@@ -276,17 +276,17 @@ function drawChart3() {
             ['2018', 87.9,	90.1]
           ]);
 
-          var options = {
-            title: 'Access to Healthcare through Insurance, by Sex',
-            curveType: 'function',
-            legend: { position: 'bottom' }
-          };
+      var options = {
+        title: 'Access to Health Services through Insurance, by sex',
+        curveType: 'function',
+        legend: { position: 'bottom' }
+      };
 
-          var chart = new google.visualization.LineChart(document.getElementById('chart_a'));
+      var chart = new google.visualization.LineChart(document.getElementById('chart_a'));
 
-          chart.draw(data, options);
-        }
-
+      chart.draw(data, options);
+    }
+	          
   </script>
     <style>
 		#menu {
@@ -447,7 +447,7 @@ figcaption {
 
 <figure>
 		      <div id="chart_a" style="width: 900px; height: 500px"></div>
-<figcaption style="font-family:Helvetica Neue" text-align: center>Access to Health Services through Insurance, by Family income (percent poverty threshold)</figcaption>
+<figcaption style="font-family:Helvetica Neue" text-align: center>Access to Health Services through Insurance, by sex</figcaption>
 
 </figure>
 <br>

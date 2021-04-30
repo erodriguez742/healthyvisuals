@@ -552,43 +552,7 @@ figcaption {
 
 </figure>
 		    	    
-		     <section class="page-section portfolio" id="portfolio">
-            <div class="container">
-		     <div class="container">
-		    <p><h2>Rural hospital closures</h2></p>
-
-		    <div id='map' style="width: 1100px; height: 500px"></div>
-<script>
-mapboxgl.accessToken = 'pk.eyJ1Ijoicm9kcmk2OTEiLCJhIjoiY2szMGsyYTczMHRqbjNtczF0bDg2Zm83YSJ9.91pXtlBbZG8dWo9-hnz04w';
-var map = new mapboxgl.Map({
-container: 'map',
-zoom: 3.68,
-center: [-98.136068, 38.316792],
-style: 'mapbox://styles/rodri691/cknyoija82o7817s0s1yj42a4'
-});
-
-map.on('click', function(e) {
-  var features = map.queryRenderedFeatures(e.point, {
-    layers: ['hospitalclosures'] // replace this with the name of the layer
-  });
-
-  if (!features.length) {
-    return;
-  }
-
-  var feature = features[0];
-
-  var popup = new mapboxgl.Popup({ offset: [0, -15] })
-    .setLngLat(feature.geometry.coordinates)
-    .setHTML('<h3>' + feature.properties.Hospital
- + '</h3><p>' + feature.properties.ClosureYear + '</p>')
-    .addTo(map);
-});
-
-
-</script>
-		    </div>
-	    </section>
+		
 		    <section class="page-section portfolio" id="portfolio">
             <div class="container">
 		     <div class="container">

@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>healthy Visuals</title>
+    <title>Healthy Visuals</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -40,6 +40,8 @@
 	  google.charts.setOnLoadCallback(drawChart7);
 	  google.charts.setOnLoadCallback(drawChart8);
 	  google.charts.setOnLoadCallback(drawChart9);
+	  google.charts.setOnLoadCallback(drawChart10);
+	  google.charts.setOnLoadCallback(drawChart11);
 
 	  
     function drawChart1() {
@@ -262,7 +264,7 @@ function drawChart3() {
 
       chart.draw(data, options);
     }
-	   function drawCharta() {
+	   function drawChart10() {
      var data = google.visualization.arrayToDataTable([
             ['Year', 'Male', 'Female'],
             ['2010',  79.7,	83.9],
@@ -282,10 +284,34 @@ function drawChart3() {
         legend: { position: 'bottom' }
       };
 
-      var chart = new google.visualization.LineChart(document.getElementById('chart_a'));
+      var chart = new google.visualization.LineChart(document.getElementById('chart_10'));
 
       chart.draw(data, options);
     }
+	  function drawChart11() {
+          var data = google.visualization.arrayToDataTable([
+           ['Year', 'American Indian or Alaska Native only', 'Asian only', 'Native Hawaiian or Other Pacific Islander only', 'Black or African American only', 'White only', '2 or more races', 'Hispanic or Latino', 'Not Hispanic or Latino', 'Black or African American only, not Hispanic or Latino', 'White only, not Hispanic or Latino'],
+           ['2010',	56,	    82.9,	75.6,	79.4,	82.4,	84.2,	68,	    84.8,	79.3,	86.3],
+           ['2011',	65.8,	83.5,	77.3,	81,	    83.3,	84,	    68.9,	85.8,	81.2,	87.1],
+           ['2012',	73,	    83.2,	87.9,	82,	    83.3,	85.5,	69.6,	86.1,	82.2,	87.3],
+           ['2013',	70.6,	85.8,	89.3,	81.1,	83.7,	84.7,	69.3,	86.6,	81.2,	87.8],
+           ['2014',	71.7,	89.2,	87.8,	86.3,	86.7,	89.9,	74.5,	89.5,	86.5,	90.3],
+           ['2015',	78.6,	92.5,	87.4,	88.7,	89.3,	90.5,	78.9,	91.8,	88.8,	92.5],
+           ['2016',	74.6,	93.5,	90.7,	88.5,	89.8,	91,	    80.4,	91.9,	88.7,	92.7],
+           ['2017',	73.1,	92.6,	88.8,	88.8,	89.4,	89.6,	79.4,	91.8,	88.9,	92.6],
+           ['2018',	71.4,	92.6,	90.6,	87.9,	89.1,	89.9,	79.9,	91.3,	87.9,	92.2]
+          ]);
+
+          var options = {
+            title: 'Access to Healthcare through Insurance, by Race',
+            curveType: 'function',
+            legend: { position: 'bottom' }
+          };
+
+          var chart = new google.visualization.LineChart(document.getElementById('chart_11'));
+
+          chart.draw(data, options);
+        }
 	          
   </script>
     <style>
@@ -446,13 +472,18 @@ figcaption {
 <p class="lead">Taking the data available requires contextualizing said data in order to make any sense of the numbers. For example, below are graphs representing expanded access to healthcare services. This language of access has been popular as of late neoliberal political circles. While the data shows modest gains in access to care, the availability of care to many rural populations has decreased. This conflation between “access to” and having healthcare is one such disaster area. Below are examples of different portions of the population and their reported “access” to health services:</p>
 
 <figure>
-		      <div id="chart_a" style="width: 900px; height: 500px"></div>
+		      <div id="chart_10" style="width: 900px; height: 500px"></div>
 <figcaption style="font-family:Helvetica Neue" text-align: center>Access to Health Services through Insurance, by sex</figcaption>
 
 </figure>
 <br>
 
+<figure>
+		      <div id="chart_11" style="width: 900px; height: 500px"></div>
+<figcaption style="font-family:Helvetica Neue" text-align: center>Access to Health Services through Insurance, by sex</figcaption>
 
+</figure>
+<br>
 <figure>
 		      <div id="chart_1" style="width: 900px; height: 500px"></div>
 <figcaption style="font-family:Helvetica Neue" text-align: center>Access to Health Services through Insurance, by Family income (percent poverty threshold)</figcaption>
